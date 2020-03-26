@@ -27,6 +27,7 @@ then
     --input_lib $inputlib \
     --output $matcsv
 fi
+echo "finished prepare CSV"
 
 # the actual peer run
 if [[ ! -d $peerdir ]]
@@ -42,3 +43,4 @@ then
     echo "$line" >> $peerdir/peer.log
   done
 fi
+

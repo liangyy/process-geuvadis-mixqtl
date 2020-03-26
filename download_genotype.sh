@@ -17,7 +17,7 @@ if [[ ! -f $plinkfilepre.pgen ]]
 then
   # I have to do some ugly fixes so that vcf get read by plink2
   zcat $genofile | sed 's/ /+/g' | gzip > tempo-$genofile
-  $plink2binary --vcf tempo-$genofile --make-bed --out $plinkfilepre
+  $plink2binary --vcf tempo-$genofile --make-pgen --out $plinkfilepre
 fi
 
 if [[ ! -f $plinkfilepre.eigenval ]]

@@ -33,4 +33,4 @@ mat[trc == 0] = NA
 mat_imp = impute::impute.knn(as.matrix(mat))
 
 ## write CSV for PEER run
-write.table(t(mat_imp), opt$output, row = F, col = F, quo = F, sep = ',')
+write.table(t(as.matrix(mat_imp$data)), opt$output, row = F, col = F, quo = F, sep = ',')
