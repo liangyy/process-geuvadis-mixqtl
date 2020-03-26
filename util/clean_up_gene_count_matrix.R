@@ -2,7 +2,11 @@ library(optparse)
 
 option_list <- list(
   make_option(c("-i", "--input"), type="character", default=NULL,
-              help="intput",
+              help="input",
+              metavar="character"),
+  make_option(c("-n", "--input_gene"), type="character", default=NULL,
+              help="input with a smaller set of genes (only first column 
+                which should be gene names is used)",
               metavar="character"),
   make_option(c("-o", "--out_mat"), type="character", default=NULL,
               help="output gene count matrix",
@@ -38,6 +42,9 @@ calc_size_factor = function(mat) {
 library(data.table)
 options(datatable.fread.datatable = FALSE)
 mat0 = fread(cmd = paste0('zcat < ', opt$input), header = T, sep = '\t')
+mat_gene = fread(cmd = paste0('zcat < ', opt$input_gene, ' | cut -f 1'), header = T, sep = '\t')
+# only keep genes in mat_gene
+mat0 = mat0[mat0[, 1] %in% mat_gene[, 1], ]
 sample_ids = colnames(mat0)[-(1:4)]
 indiv_ids = parse_indiv_from_sample(sample_ids)
 # remove duplicated individuals 
