@@ -6,5 +6,9 @@ Repository to process GEUVADIS data for mixQTL example
 
 * Gene-level total count matrix
 * Library size vector
-* Covariate matrix
+* Genotype data
+* Covariate matrix:
+    * run PEER
+    * run PCA
 * Allele-specific count matrix
+
