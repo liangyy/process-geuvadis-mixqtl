@@ -3,9 +3,9 @@
 # so that the genotype is converted
 
 plink2binary=/gpfs/data/im-lab/nas40t2/yanyul/softwares/plink2
-vtpath=
 genofile=GEUVADIS.chr22.PH1PH2_465.IMPFRQFILT_BIALLELIC_PH.annotv2.genotypes.vcf.gz
 plinkfilepre=GEUVADIS.chr22.PH1PH2_465.IMPFRQFILT_BIALLELIC_PH.annotv2.genotypes
+pedigreefile=20130606_g1k.ped
 
 if [[ ! -f $genofile ]]
 then
@@ -23,4 +23,9 @@ fi
 if [[ ! -f $plinkfilepre.eigenval ]]
 then
   $plink2binary --pfile $plinkfilepre --pca --out $plinkfilepre
+fi
+
+if [[ ! -f $pedigreefile ]]
+then
+  wget ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/working/20130606_sample_info/20130606_g1k.ped
 fi
