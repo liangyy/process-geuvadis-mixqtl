@@ -1,3 +1,8 @@
+# ARGS1: target directory
+
+targetdir=$1
+nowdir=`pwd`
+
 # here we only use chr22
 # we'd prefer pgen format in plink2 rather than vcf.gz 
 # so that the genotype is converted
@@ -6,6 +11,12 @@ plink2binary=/gpfs/data/im-lab/nas40t2/yanyul/softwares/plink2
 genofile=GEUVADIS.chr22.PH1PH2_465.IMPFRQFILT_BIALLELIC_PH.annotv2.genotypes.vcf.gz
 plinkfilepre=GEUVADIS.chr22.PH1PH2_465.IMPFRQFILT_BIALLELIC_PH.annotv2.genotypes
 pedigreefile=20130606_g1k.ped
+
+if [[ ! -d $targetdir ]]
+then
+  mkdir $targetdir
+fi
+cd $targetdir
 
 if [[ ! -f $genofile ]]
 then
