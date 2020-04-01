@@ -4,8 +4,8 @@ targetdir=$1
 nowdir=`pwd`
 downloadfile=GD660.GeneQuantCount.txt.gz
 downloadfile2=GD462.GeneQuantRPKM.50FN.samplename.resk10.txt.gz
-processfile=rmdup-GD660.GeneQuantCount.txt.gz
-libsizefile=libsize-GD660.GeneQuantCount.txt.gz
+processfile=geuvadis.total_count.bed.gz  # rmdup-GD660.GeneQuantCount.bed.gz
+libsizefile=geuvadis.library_size.tsv.gz  # libsize-GD660.GeneQuantCount.txt.gz
 
 if [[ ! -d $targetdir ]]
 then

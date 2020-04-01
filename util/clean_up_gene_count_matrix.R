@@ -54,7 +54,7 @@ new_sample_cols = indiv_ids[!duplicated(indiv_ids)]
 mat_rmdup = mat_rmdup[, c(3, 4, 4, 1, 5 : ncol(mat_rmdup))]
 mat_rmdup[, 2] = mat_rmdup[, 3] - 1
 mat_rmdup[, 1] = paste0('chr', mat_rmdup[, 1])
-colnames(mat_rmdup)[1:4] = c('chr', 'start', 'end', 'gene_id')
+colnames(mat_rmdup)[1:4] = c('#chr', 'start', 'end', 'gene_id')
 colnames(mat_rmdup)[5:ncol(mat_rmdup)] = new_sample_cols
 # save output matrix
 gz1 <- gzfile(opt$out_mat, "w")
