@@ -2,6 +2,10 @@
 
 Repository to process GEUVADIS data for mixQTL example
 
+# TL;DR Example data download link
+
+[Download from here](https://uchicago.box.com/s/5wf1b13h08qlu7lzkiswed7ndm215tll).
+
 # Desired outputs
 
 * Gene-level total count matrix
