@@ -16,7 +16,7 @@ set.seed(2020)
 library(data.table)
 options(datatable.fread.datatable = FALSE)
 
-opt = list(trc = '~/Desktop/tmp/GEUVADIS-mixqtl/geuvadis.total_count.bed.gz')
+# opt = list(trc = '~/Desktop/tmp/GEUVADIS-mixqtl/geuvadis.total_count.bed.gz')
 
 
 trc = fread(cmd = paste0('zcat < ', opt$trc), header = TRUE, sep = '\t')

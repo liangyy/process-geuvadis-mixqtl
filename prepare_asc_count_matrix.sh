@@ -11,7 +11,7 @@ then
 fi
 cd $targetdir
 
-if [[ ! -f $acsprefix.h1.tsv.gz ]]
+if [[ ! -f $ascprefix.h1.tsv.gz ]]
 then
   Rscript $nowdir/util/simulate_asc_matrix.R \
     --trc $trcfile \
