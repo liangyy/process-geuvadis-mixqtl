@@ -27,6 +27,8 @@ Example data includes:
 
 # Run
 
+_You need to change the path in the notebook so that it points to the desired files in your local machine._
+
 Prepare data.
 
 ```
